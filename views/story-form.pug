@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1 Story form
+  form(method="POST" class="signup-form" action="")
+    div(class="label-group")
+      label(for="title") Title
+      input(placeholder="Title of message" name="title")
+    div(class="label-group")
+      label(for="message") Message
+      input(style="height: 300px" placeholder="Enter message here" name="message")
+    button Send Message
