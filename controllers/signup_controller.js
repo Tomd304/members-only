@@ -9,9 +9,9 @@ exports.signup_post = async function (req, res, next) {
   if (!user) {
     bcrypt.hash(req.body.password, 10, (err, hashedPassword) => {
       const newUser = new User({
-        firstName: req.body.firstname,
-        lastName: req.body.lastname,
-        userName: req.body.username,
+        firstname: req.body.firstname,
+        lastname: req.body.lastname,
+        username: req.body.username,
         password: hashedPassword,
         membershipStatus: "free",
       });

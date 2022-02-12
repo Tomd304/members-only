@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1 Login form
+  form(method="POST" class="signup-form" action="")
+    div(class="label-group")
+      label(for="username") Username
+      input(placeholder="JoeBloggs123" name="username")
+    div(class="label-group")
+      label(for="password") Password
+      input(placeholder="********" name="password" type="password")
+    button Log in
