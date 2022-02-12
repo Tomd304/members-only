@@ -7,6 +7,8 @@ block content
       div(class="message-board")
         each message in messages 
           h1=message.title 
+          if user
+            h5 #{"Created at: " + message.created_formatted + " by user - " + message.creator.fullname}
           p=message.message
   if !user 
     h1(style="display: flex; justify-content:space-between")
@@ -14,5 +16,6 @@ block content
       a(href="/signup") Sign Up 
   else 
     h1 
+      a(href="/story") Create Story
       a(href="/logout") Log Out
   

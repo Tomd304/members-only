@@ -14,6 +14,7 @@ var mongoose = require("mongoose");
 var indexRouter = require("./routes/index");
 var signupRouter = require("./routes/signup");
 var loginRouter = require("./routes/login");
+var storyRouter = require("./routes/story");
 
 //mongoose connection
 mongoose.connect(process.env.MONGODB_URI, {
@@ -80,6 +81,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", indexRouter);
 app.use("/signup", signupRouter);
 app.use("/login", loginRouter);
+app.use("/story", storyRouter);
 app.use("/logout", (req, res, err) => {
   req.logout();
   res.redirect("/");
