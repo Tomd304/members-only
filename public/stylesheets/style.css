@@ -1,8 +1,59 @@
 body {
-  padding: 50px;
+  margin: 0;
+  padding: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  background-color: #666;
+}
+
+* {
+  color: white;
 }
 
 a {
-  color: #00B7FF;
+  color: #00b7ff;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.signup-form {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  border: 1px solid #333;
+  border-radius: 6px;
+  padding: 35px;
+  background-color: #222;
+  gap: 22px;
+}
+
+.label-group {
+  display: flex;
+  justify-content: flex-start;
+  font-size: 30px;
+}
+
+.label-group label {
+  width: 200px;
+}
+
+.label-group input {
+  width: 200px;
+  color: #666;
+  border-radius: 6px;
+}
+
+form button {
+  margin-left: auto;
+  color: #666;
+  font-size: 30px;
 }
