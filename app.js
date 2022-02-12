@@ -66,6 +66,11 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.urlencoded({ extended: false }));
 
+app.use(function (req, res, next) {
+  res.locals.currentUser = req.user;
+  next();
+});
+
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -75,7 +80,10 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", indexRouter);
 app.use("/signup", signupRouter);
 app.use("/login", loginRouter);
-
+app.use("/logout", (req, res, err) => {
+  req.logout();
+  res.redirect("/");
+});
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));

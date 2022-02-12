@@ -2,9 +2,11 @@ extends layout
 
 block content
   h1 Welcome to the board
-  if user 
-    h1 logged in as #{user.firstname + " " + user.lastname}
-  h1(style="display: flex; justify-content:space-between")
-    a(href="/login") Log In
-    a(href="/signup") Sign Up 
+  if !user 
+    h1(style="display: flex; justify-content:space-between")
+      a(href="/login") Log In
+      a(href="/signup") Sign Up 
+  else 
+    h1 
+      a(href="/logout") Log Out
   
