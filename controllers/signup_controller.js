@@ -5,7 +5,8 @@ exports.signup_get = function (req, res, next) {
 };
 
 exports.signup_post = async function (req, res, next) {
-  const user = await User.findOne({ userName: req.body.username });
+  const user = await User.findOne({ username: req.body.username });
+  console.log("signing up");
   if (!user) {
     bcrypt.hash(req.body.password, 10, (err, hashedPassword) => {
       const newUser = new User({
@@ -15,6 +16,7 @@ exports.signup_post = async function (req, res, next) {
         password: hashedPassword,
         membershipStatus: "free",
       });
+      console.log(newUser);
       newUser.save();
     });
   }

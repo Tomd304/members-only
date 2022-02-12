@@ -57,3 +57,26 @@ form button {
   color: #666;
   font-size: 30px;
 }
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+}
+
+.box {
+  width: 70%;
+  height: 100%;
+  background-color: rgb(238, 238, 238);
+  border-radius: 20px;
+}
+.message-board {
+  box-sizing: border-box;
+  padding: 30px 60px;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.message-board * {
+  color: black;
+}
